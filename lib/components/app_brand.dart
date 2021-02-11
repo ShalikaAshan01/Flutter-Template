@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //TODO: add your logo and app name
-const appName = "Flutter Template";
+const kAppName = "Flutter Template";
 class Logo extends StatelessWidget {
   final double size;
 
@@ -19,7 +19,18 @@ class AppName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(appName,style: textStyle??TextStyle(),),
+      child: Text(kAppName,style: textStyle??TextStyle(),),
+    );
+  }
+}
+class Background extends StatelessWidget {
+  final Widget child;
+  const Background({Key key,@required this.child}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Theme.of(context).backgroundColor,
+      child: child,
     );
   }
 }

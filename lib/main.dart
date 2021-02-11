@@ -1,8 +1,12 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_template/components/app_brand.dart';
+import 'package:flutter_template/components/app_text_theme.dart';
 import 'package:flutter_template/components/components.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
+
+import 'components/size_config.dart';
 
 void main() => runApp(
   DevicePreview(
@@ -15,13 +19,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: kAppName,
       theme: ThemeData(
         textTheme: TextTheme(
 
         )
       ),
-      home: MyHomePage(),
+      home: Root(),
       builder: (context, widget) {
         return DevicePreview.appBuilder(context, ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, widget),
@@ -39,26 +43,11 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
+class Root extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-
-        ],
-      ),
-    );
+    SizeConfig().init(context);
+    AppTextTheme().init(context);
+    return Container();
   }
 }
