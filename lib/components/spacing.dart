@@ -1,9 +1,7 @@
 import 'package:flutter/painting.dart';
 
 // Margin
-const EdgeInsets marginBottom12 = EdgeInsets.only(bottom: 12);
-const EdgeInsets marginBottom24 = EdgeInsets.only(bottom: 24);
-const EdgeInsets marginBottom40 = EdgeInsets.only(bottom: 40);
-
-// Padding
-const EdgeInsets paddingBottom24 = EdgeInsets.only(bottom: 24);
+const margin1 = 12.0;
+const margin2 = 24.0;
+const margin3 = 36.0;
+const margin4 = 48.0;
